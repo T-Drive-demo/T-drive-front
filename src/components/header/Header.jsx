@@ -1,12 +1,12 @@
 import { Wrapper, HeaderContainer } from "styles/header/header.style";
 import SearchBar from "components/header/SearchBar";
-import LogoWrapperComponent from "components/header/LogoWrapperComponent";
+import LogoSection from "components/header/LogoSection";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
-        <LogoWrapperComponent />
+        <LogoSection />
         <SearchBar />
       </Wrapper>
     </HeaderContainer>

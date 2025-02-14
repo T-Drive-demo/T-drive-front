@@ -1,7 +1,7 @@
 import { LogoWrapper, Logo } from "styles/header/logowrappercomponent.style";
 import LogoImage from "assets/icons/Thinkfree-logo.png";
 
-const LogoWrapperComponent = () => {
+const LogoSection = () => {
   return (
     <LogoWrapper>
       <Logo>
@@ -12,4 +12,4 @@ const LogoWrapperComponent = () => {
   );
 };
 
-export default LogoWrapperComponent;
+export default LogoSection;
