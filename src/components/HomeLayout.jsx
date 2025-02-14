@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Outlet } from "react-router-dom";
 
 import Header from "components/header/Header";
 import Sidebar from "components/sidebar/Sidebar";
@@ -9,7 +10,7 @@ const HomeLayout = () => {
       <Header />
       <HomeContainer>
         <Sidebar />
-        home
+        <Outlet />
       </HomeContainer>
     </>
   );

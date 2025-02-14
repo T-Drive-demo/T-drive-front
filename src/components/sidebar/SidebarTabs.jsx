@@ -11,30 +11,51 @@ import {
   DeleteOutlineIcon,
   CloudQueueIcons,
 } from "components/common/SvgIcons";
+import { NavLink } from "react-router-dom";
 
 const SidebarTabs = () => {
   return (
     <SidebarOptions>
-      <SidebarOption>
-        <MobileScreenShareIcon />
-        <span>My Drive</span>
-      </SidebarOption>
-      <SidebarOption>
-        <QueryBuilderIcon />
-        <span>Recent</span>
-      </SidebarOption>
-      <SidebarOption>
-        <StarBorderIcon />
-        <span>Starred</span>
-      </SidebarOption>
-      <SidebarOption>
-        <PeopleAltIcon />
-        <span>Shared with me</span>
-      </SidebarOption>
-      <SidebarOption>
-        <DeleteOutlineIcon />
-        <span>Trash</span>
-      </SidebarOption>
+      <NavLink to={"/home"}>
+        {({ isActive }) => (
+          <SidebarOption>
+            <MobileScreenShareIcon />
+            <span>My Drive</span>
+          </SidebarOption>
+        )}
+      </NavLink>
+      <NavLink to={"/recent"}>
+        {({ isActive }) => (
+          <SidebarOption>
+            <QueryBuilderIcon />
+            <span>Recent</span>
+          </SidebarOption>
+        )}
+      </NavLink>
+      <NavLink to={"/starred"}>
+        {({ isActive }) => (
+          <SidebarOption>
+            <StarBorderIcon />
+            <span>Starred</span>
+          </SidebarOption>
+        )}
+      </NavLink>
+      <NavLink to={"/shared"}>
+        {({ isActive }) => (
+          <SidebarOption>
+            <PeopleAltIcon />
+            <span>Shared with me</span>
+          </SidebarOption>
+        )}
+      </NavLink>
+      <NavLink to={"/trash"}>
+        {({ isActive }) => (
+          <SidebarOption>
+            <DeleteOutlineIcon />
+            <span>Trash</span>
+          </SidebarOption>
+        )}
+      </NavLink>
       <hr />
       <SidebarOption>
         <CloudQueueIcons />
