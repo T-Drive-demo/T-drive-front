@@ -1,5 +1,12 @@
+import { RecentContainer } from "styles/recent/recent.style";
+import PageHeader from "components/common/PageHeader";
+
 const Recent = () => {
-  return <div>Recent</div>;
+  return (
+    <RecentContainer>
+      <PageHeader pageTitle={"Recent"} />
+    </RecentContainer>
+  );
 };
 
 export default Recent;

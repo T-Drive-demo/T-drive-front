@@ -10,6 +10,9 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import ListIcon from "@mui/icons-material/List";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 
 /** Header */
 export const SearchIcons = () => <SearchIcon />;
@@ -26,3 +29,8 @@ export const StarBorderIcon = () => <StarBorderOutlinedIcon />;
 export const DeleteOutlineIcon = () => <DeleteOutlineOutlinedIcon />;
 export const CloudQueueIcons = () => <CloudQueueIcon />;
 export const UploadFileIcons = () => <UploadFileIcon />;
+
+/** PageHeader */
+export const ListIcons = () => <ListIcon />;
+export const InfoOutlinedIcons = () => <InfoOutlinedIcon />;
+export const AppsRoundedIcons = () => <AppsRoundedIcon />;

@@ -1,5 +1,12 @@
+import { DataContainer } from "styles/home/Data.style";
+import PageHeader from "components/common/PageHeader";
+
 const Data = () => {
-  return <div>Data</div>;
+  return (
+    <DataContainer>
+      <PageHeader pageTitle={"My Drive"} />
+    </DataContainer>
+  );
 };
 
 export default Data;
