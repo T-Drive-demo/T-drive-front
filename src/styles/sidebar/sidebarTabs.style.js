@@ -41,6 +41,10 @@ const StorageBar = styled.div`
   align-items: center;
   padding: 8px 20px;
   flex-direction: column; /* 세로 정렬 */
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export { SidebarOptions, SidebarOption, StorageBar };
