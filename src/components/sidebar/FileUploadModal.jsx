@@ -33,7 +33,7 @@ const FileUploadModal = ({
               <>
                 <UploadingPara>Uploading...</UploadingPara>
                 <ModalProgress>
-                  <ProgressBar progress={progress} />
+                  <ProgressBar $progress={progress} />
                   <ProgressText>{progress}%</ProgressText>
                 </ModalProgress>
               </>
