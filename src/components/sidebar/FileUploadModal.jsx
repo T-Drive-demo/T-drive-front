@@ -3,6 +3,9 @@ import {
   ModalHeading,
   ModalBody,
   UploadingPara,
+  ModalProgress,
+  ProgressBar,
+  ProgressText,
 } from "styles/sidebar/fileuploadmodal.style";
 import { UploadFileIcons } from "components/common/SvgIcons";
 import { Modal } from "@mui/material";
@@ -14,6 +17,7 @@ const FileUploadModal = ({
   handleFile,
   handleUpload,
   selectedFile,
+  progress,
 }) => {
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
@@ -26,7 +30,13 @@ const FileUploadModal = ({
           </ModalHeading>
           <ModalBody>
             {uploading ? (
-              <UploadingPara>Uploading...</UploadingPara>
+              <>
+                <UploadingPara>Uploading...</UploadingPara>
+                <ModalProgress>
+                  <ProgressBar progress={progress} />
+                  <ProgressText>{progress}%</ProgressText>
+                </ModalProgress>
+              </>
             ) : (
               <>
                 <div className="modal__file">

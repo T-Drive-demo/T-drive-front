@@ -114,4 +114,45 @@ const UploadingPara = styled.div`
   padding: 10px;
 `;
 
-export { ModalPopup, ModalHeading, ModalBody, UploadingPara };
+const ModalProgress = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+`;
+
+const ProgressBar = styled.div`
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 100%;
+    background-color: #0066da;
+    width: ${(props) => props.progress}%;
+    transition: width 0.4s ease-in-out;
+  }
+`;
+
+const ProgressText = styled.p`
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0066da;
+`;
+
+export {
+  ModalPopup,
+  ModalHeading,
+  ModalBody,
+  UploadingPara,
+  ModalProgress,
+  ProgressBar,
+  ProgressText,
+};

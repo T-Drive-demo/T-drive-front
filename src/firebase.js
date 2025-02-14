@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Firebase Storage 관련 함수들
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage"; // Firebase Storage 관련 함수들
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
@@ -21,4 +26,12 @@ const storage = getStorage(firebaseApp);
 const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
 
-export { db, storage, auth, provider, ref, uploadBytes, getDownloadURL };
+export {
+  db,
+  storage,
+  auth,
+  provider,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+};
