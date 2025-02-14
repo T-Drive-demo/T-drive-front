@@ -19,4 +19,9 @@ const HeaderContainer = styled.div`
   box-shadow: 2px 2px 2px #cecece;
 `;
 
-export { Wrapper, HeaderContainer };
+const RightContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export { Wrapper, HeaderContainer, RightContainer };
