@@ -13,6 +13,17 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import ListIcon from "@mui/icons-material/List";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
+/** FileIcons */
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import PermMediaOutlinedIcon from "@mui/icons-material/PermMediaOutlined";
+import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
+import AudioFileOutlinedIcon from "@mui/icons-material/AudioFileOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import StarIcon from "@mui/icons-material/Star";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 /** Header */
 export const SearchIcons = () => <SearchIcon />;
@@ -34,3 +45,24 @@ export const UploadFileIcons = () => <UploadFileIcon />;
 export const ListIcons = () => <ListIcon />;
 export const InfoOutlinedIcons = () => <InfoOutlinedIcon />;
 export const AppsRoundedIcons = () => <AppsRoundedIcon />;
+
+/** FileIcons */
+export const FileIcons = ({ type }) => {
+  return type.includes("pdf") ? (
+    <PictureAsPdfIcon />
+  ) : type.includes("image") ? (
+    <PermMediaOutlinedIcon />
+  ) : type.includes("video") ? (
+    <VideoLibraryOutlinedIcon />
+  ) : type.includes("audio") ? (
+    <AudioFileOutlinedIcon />
+  ) : (
+    <DescriptionOutlinedIcon />
+  );
+};
+
+/** Data */
+export const InsertDriveFileIcons = () => <InsertDriveFileIcon />;
+export const ArrowDownwardIcons = () => <ArrowDownwardIcon />;
+export const StarFilledIcon = () => <StarIcon />;
+export const MoreOptionsIcon = () => <MoreHorizIcon />;
