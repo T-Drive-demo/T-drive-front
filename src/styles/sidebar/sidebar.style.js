@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const SidebarContainer = styled.div`
   width: 180px;
+  height: 100vh; /* 화면 전체 높이 */
   padding-top: 10px;
   border-right: 1px solid lightgray;
   transition: all 0.1s linear;
