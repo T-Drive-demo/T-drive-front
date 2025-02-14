@@ -65,6 +65,7 @@ const ModalBody = styled.div`
     gap: 10px;
     width: 100%;
     padding: 20px;
+    box-sizing: border-box; /* padding과 border가 전체 크기에 포함되도록 */
     color: #000;
     border: 2px dashed #0066da;
     border-radius: 5px;
