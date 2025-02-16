@@ -1,11 +1,9 @@
 import { DataContainer } from "styles/home/Data.style";
-import PageHeader from "components/common/PageHeader";
-
-import { db } from "../../firebase";
-import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import RecentDataGrid from "components/home/RecentDataGrid";
-import MainData from "components/home/MainData";
+import { getFiles } from "api/firebaseApi";
+import PageHeader from "components/common/PageHeader";
+import RecentDataGrid from "pages/home/RecentDataGrid";
+import MainData from "pages/home/MainData";
 
 const Data = () => {
   const [files, setFiles] = useState([]);
@@ -13,20 +11,7 @@ const Data = () => {
 
   useEffect(() => {
     // 로그인한 user의 파일만 가져오도록 추후 구현예정
-    const unsubscribe = onSnapshot(
-      collection(db, "myfiles"),
-      (snapshot) => {
-        setFiles(
-          snapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          }))
-        );
-      },
-      (error) => {
-        console.error("Error getting documents: ", error);
-      }
-    );
+    const unsubscribe = getFiles(setFiles);
 
     return () => unsubscribe();
   }, []);

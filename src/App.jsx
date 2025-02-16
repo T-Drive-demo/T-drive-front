@@ -1,10 +1,10 @@
-import HomeLayout from "components/HomeLayout";
+import HomeLayout from "pages/HomeLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Data from "components/home/Data";
-import Recent from "components/recent/Recent";
-import Starred from "components/starred/Starred";
-import Shared from "components/shared/Shared";
-import Trash from "components/trash/Trash";
+import Data from "pages/home/Data";
+import Recent from "pages/recent/Recent";
+import Starred from "pages/starred/Starred";
+import Shared from "pages/shared/Shared";
+import Trash from "pages/trash/Trash";
 
 function App() {
   const router = createBrowserRouter([
