@@ -6,7 +6,9 @@ import {
   onSnapshot,
   updateDoc,
   deleteDoc,
+  addDoc,
 } from "firebase/firestore";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { toast } from "react-toastify";
 
 const getFiles = (setFiles) => {
@@ -88,4 +90,41 @@ const getTrashFiles = (setFiles) => {
   return unsubscribeFiles;
 };
 
-export { getFiles, handleStarred, handleDeleteFromTrash, getTrashFiles };
+let trashRef = collection(db, "trash");
+
+const postTrashCollection = (object) => {
+  addDoc(trashRef, object)
+    .then(() => {})
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+const handleDelete = async (id, data, setOptionsVisible) => {
+  try {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this file?"
+    );
+
+    if (confirmed) {
+      const docRef = doc(db, "myfiles", id);
+
+      postTrashCollection(data);
+
+      await deleteDoc(docRef);
+      toast.warn("File moved to the trash");
+    }
+  } catch (error) {
+    console.error("Error deleting document: ", error);
+  } finally {
+    setOptionsVisible(id);
+  }
+};
+
+export {
+  getFiles,
+  handleStarred,
+  handleDeleteFromTrash,
+  getTrashFiles,
+  handleDelete,
+};

@@ -27,6 +27,11 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
+
+import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
+
 /** Header */
 export const SearchIcons = () => <SearchIcon />;
 export const NotificationsIcons = () => <NotificationsIcon />;
@@ -72,3 +77,8 @@ export const MoreOptionsIcon = () => <MoreHorizIcon />;
 /** FilesList */
 export const FileIcon = () => <DescriptionOutlinedIcon />;
 export const DeleteIcon = () => <DeleteRoundedIcon />;
+
+export const DownloadIcon = () => <FileDownloadOutlinedIcon />;
+export const CopyIcon = () => <ContentCopyRoundedIcon />;
+
+export const ShareIcon = () => <ReplyOutlinedIcon />;

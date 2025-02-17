@@ -79,4 +79,109 @@ const OptionsContainer = styled.span`
   cursor: pointer;
 `;
 
-export { DataListRow, OptionsContainer };
+const OptionsMenu = styled.span`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  top: -110%;
+  right: 100%;
+  cursor: pointer;
+  z-index: 10;
+  width: max-content;
+  min-width: 120px;
+  border-radius: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    top: 100px;
+    right: -8px;
+    transform: rotate(45deg);
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+  }
+
+  span {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box; /* border와 padding이 width에 포함되도록 설정 */
+
+    a {
+      color: #000;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: #ccc;
+      z-index: 11;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: #000;
+    background-color: transparent;
+  }
+
+  .fileSize,
+  .uploaded {
+    background-color: #f0f0f0;
+    cursor: default;
+  }
+`;
+
+const ShareButton = styled.span`
+  position: relative;
+  cursor: pointer;
+
+  span {
+    width: max-content;
+    height: max-content;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    position: absolute;
+    top: -20px;
+    left: -60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    span {
+      background-color: transparent;
+    }
+  }
+`;
+
+export { DataListRow, OptionsContainer, OptionsMenu, ShareButton };

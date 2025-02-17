@@ -1,6 +1,6 @@
 import { DataContainer } from "styles/home/Data.style";
 import { useEffect, useState } from "react";
-import { getFiles } from "api/firebaseApi";
+import { getFiles, handleDelete } from "api/firebaseApi";
 import PageHeader from "components/common/PageHeader";
 import RecentDataGrid from "pages/home/RecentDataGrid";
 import MainData from "pages/home/MainData";
@@ -32,6 +32,8 @@ const Data = () => {
             files={files}
             handleOptionsClick={handleOptionsClick}
             optionsVisible={optionsVisible}
+            handleDelete={handleDelete}
+            setOptionsVisible={setOptionsVisible}
           />
         </div>
       </div>
