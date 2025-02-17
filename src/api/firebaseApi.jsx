@@ -5,10 +5,11 @@ import {
   getDoc,
   onSnapshot,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
-export const getFiles = (setFiles) => {
+const getFiles = (setFiles) => {
   const filesData = collection(db, "myfiles");
   const unsubscribe = onSnapshot(
     filesData,
@@ -33,7 +34,7 @@ export const getFiles = (setFiles) => {
   return unsubscribe;
 };
 
-export const handleStarred = async (id) => {
+const handleStarred = async (id) => {
   try {
     const docRef = doc(db, "myfiles", id);
     const docSnapshot = await getDoc(docRef);
@@ -52,3 +53,22 @@ export const handleStarred = async (id) => {
     console.error("Error updating starred status: ", error);
   }
 };
+
+const handleDeleteFromTrash = async (id) => {
+  try {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this file?"
+    );
+
+    if (confirmed) {
+      const docRef = doc(db, "trash", id);
+
+      await deleteDoc(docRef);
+      toast.error("Permanently Deleted");
+    }
+  } catch (error) {
+    console.error("Error deleting document: ", error);
+  }
+};
+
+export { getFiles, handleStarred, handleDeleteFromTrash };

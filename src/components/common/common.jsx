@@ -7,3 +7,10 @@ export const changeBytes = (bytes, decimals = 2) => {
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
+
+const options = { timeZone: "Asia/Seoul" };
+
+export const convertDates = (seconds) => {
+  const date = new Date(seconds * 1000).toLocaleString("en-US", options);
+  return date;
+};

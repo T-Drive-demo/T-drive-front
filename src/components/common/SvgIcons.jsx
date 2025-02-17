@@ -25,6 +25,8 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import StarIcon from "@mui/icons-material/Star";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
+import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+
 /** Header */
 export const SearchIcons = () => <SearchIcon />;
 export const NotificationsIcons = () => <NotificationsIcon />;
@@ -66,3 +68,7 @@ export const InsertDriveFileIcons = () => <InsertDriveFileIcon />;
 export const ArrowDownwardIcons = () => <ArrowDownwardIcon />;
 export const StarFilledIcon = () => <StarIcon />;
 export const MoreOptionsIcon = () => <MoreHorizIcon />;
+
+/** FilesList */
+export const FileIcon = () => <DescriptionOutlinedIcon />;
+export const DeleteIcon = () => <DeleteRoundedIcon />;
