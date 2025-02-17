@@ -42,6 +42,10 @@ const StorageBar = styled.div`
   padding: 8px 20px;
   flex-direction: column; /* 세로 정렬 */
 
+  span {
+    font-size: 14px;
+  }
+
   @media screen and (max-width: 768px) {
     display: none;
   }

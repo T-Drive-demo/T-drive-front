@@ -1,3 +1,4 @@
+import { changeBytes } from "components/common/common";
 import {
   ArrowDownwardIcons,
   FileIcons,
@@ -11,16 +12,6 @@ import { DataListRow, OptionsContainer } from "styles/home/mainData.style";
 const MainData = ({ files }) => {
   // 현재는 버튼 클릭에 따라 전체 아이콘 변화만 있음. 추후 즐겨찾기 구현예정
   const [starredFile, setStarredFile] = useState(false);
-
-  // bytes 변환 (1024 : 1KB, 1048576 : 1MB)
-  const changeBytes = (bytes, decimals = 2) => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
-  };
 
   return (
     <div>
