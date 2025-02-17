@@ -1,3 +1,4 @@
+import { handleStarred } from "api/firebaseApi";
 import { changeBytes } from "components/common/common";
 import {
   ArrowDownwardIcons,
@@ -6,13 +7,9 @@ import {
   StarFilledIcon,
   MoreOptionsIcon,
 } from "components/common/SvgIcons";
-import { useState } from "react";
 import { DataListRow, OptionsContainer } from "styles/home/mainData.style";
 
 const MainData = ({ files }) => {
-  // 현재는 버튼 클릭에 따라 전체 아이콘 변화만 있음. 추후 즐겨찾기 구현예정
-  const [starredFile, setStarredFile] = useState(false);
-
   return (
     <div>
       {files.length > 0 && (
@@ -38,8 +35,8 @@ const MainData = ({ files }) => {
         files.map((file) => (
           <DataListRow key={file.id}>
             <div>
-              <p className="starr" onClick={() => setStarredFile(!starredFile)}>
-                {starredFile ? <StarFilledIcon /> : <StarBorderIcon />}
+              <p className="starr" onClick={() => handleStarred(file.id)}>
+                {file.data.starred ? <StarFilledIcon /> : <StarBorderIcon />}
               </p>
               <a href={file.data.fileURL} target="_blank">
                 <FileIcons type={file.data.contentType} />

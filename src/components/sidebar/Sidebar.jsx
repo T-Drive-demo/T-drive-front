@@ -8,6 +8,7 @@ import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db, storage } from "../../firebase";
+import { toast } from "react-toastify";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -45,6 +46,7 @@ const Sidebar = () => {
         (error) => {
           console.error("Error uploading file:", error);
           setUploading(false);
+          toast.error("Error uploading file. Please try again.");
         },
         async () => {
           const url = await getDownloadURL(uploadTask.snapshot.ref);
@@ -57,7 +59,7 @@ const Sidebar = () => {
             contentType: uploadTask.snapshot.metadata.contentType,
             starred: false,
           });
-
+          toast.success("File Uploaded Successfully");
           setUploading(false);
           setFile(null);
           setOpen(false);
@@ -67,6 +69,7 @@ const Sidebar = () => {
     } catch (error) {
       console.error("Error uploading file:", error);
       setUploading(false);
+      toast.error("Error uploading file. Please try again.");
     }
   };
 
