@@ -38,7 +38,7 @@ const SidebarTabs = () => {
     <SidebarOptions>
       <NavLink to={"/home"}>
         {({ isActive }) => (
-          <SidebarOption>
+          <SidebarOption className={isActive ? "tab-active" : ""}>
             <MobileScreenShareIcon />
             <span>My Drive</span>
           </SidebarOption>
@@ -46,7 +46,7 @@ const SidebarTabs = () => {
       </NavLink>
       <NavLink to={"/recent"}>
         {({ isActive }) => (
-          <SidebarOption>
+          <SidebarOption className={isActive ? "tab-active" : ""}>
             <QueryBuilderIcon />
             <span>Recent</span>
           </SidebarOption>
@@ -54,7 +54,7 @@ const SidebarTabs = () => {
       </NavLink>
       <NavLink to={"/starred"}>
         {({ isActive }) => (
-          <SidebarOption>
+          <SidebarOption className={isActive ? "tab-active" : ""}>
             <StarBorderIcon />
             <span>Starred</span>
           </SidebarOption>
@@ -62,7 +62,7 @@ const SidebarTabs = () => {
       </NavLink>
       <NavLink to={"/shared"}>
         {({ isActive }) => (
-          <SidebarOption>
+          <SidebarOption className={isActive ? "tab-active" : ""}>
             <PeopleAltIcon />
             <span>Shared with me</span>
           </SidebarOption>
@@ -70,7 +70,7 @@ const SidebarTabs = () => {
       </NavLink>
       <NavLink to={"/trash"}>
         {({ isActive }) => (
-          <SidebarOption>
+          <SidebarOption className={isActive ? "tab-active" : ""}>
             <DeleteOutlineIcon />
             <span>Trash</span>
           </SidebarOption>
