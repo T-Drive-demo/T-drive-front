@@ -20,7 +20,7 @@ const Recent = () => {
       <Suspense fallback={<LoaderContainer />}>
         <FilesList
           data={files?.slice(0, 9)}
-          imagePath={"/recent.svg"}
+          imagePath={"./assets/img/recent.svg"}
           text1={"No recent files"}
           text2={"See all the files you're recently edited or added"}
         />

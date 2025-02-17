@@ -1,11 +1,10 @@
 import { LogoWrapper, Logo } from "styles/header/logowrappercomponent.style";
-import LogoImage from "assets/icons/Thinkfree-logo.png";
 
 const LogoSection = () => {
   return (
     <LogoWrapper>
       <Logo>
-        <img src={LogoImage} alt="" />
+        <img src="./assets/img/Thinkfree-logo.png" alt="" />
         <span>Thinkfree Drive</span>
       </Logo>
     </LogoWrapper>
