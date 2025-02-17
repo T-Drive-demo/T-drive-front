@@ -71,4 +71,21 @@ const handleDeleteFromTrash = async (id) => {
   }
 };
 
-export { getFiles, handleStarred, handleDeleteFromTrash };
+const getTrashFiles = (setFiles) => {
+  const filesData = collection(db, "trash");
+  const unsubscribeFiles = onSnapshot(filesData, (snapshot) => {
+    setFiles(() => {
+      const fileArr = snapshot.docs
+        .map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+        .sort((a, b) => b.data.timestamp?.seconds - a.data.timestamp?.seconds);
+      return fileArr;
+    });
+  });
+
+  return unsubscribeFiles;
+};
+
+export { getFiles, handleStarred, handleDeleteFromTrash, getTrashFiles };
