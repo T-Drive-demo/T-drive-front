@@ -1,5 +1,9 @@
 import HomeLayout from "pages/HomeLayout";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Data from "pages/home/Data";
 import Recent from "pages/recent/Recent";
 import Starred from "pages/starred/Starred";
@@ -14,6 +18,10 @@ function App() {
       path: "/",
       element: <HomeLayout />,
       children: [
+        {
+          index: true,
+          element: <Navigate replace to={"/home"} />,
+        },
         {
           path: "/home",
           element: <Data />,
