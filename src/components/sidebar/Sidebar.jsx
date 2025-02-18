@@ -10,7 +10,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db, storage } from "../../firebase";
 import { toast } from "react-toastify";
 
-const Sidebar = ({ t }) => {
+const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [file, setFile] = useState(null);
@@ -85,7 +85,7 @@ const Sidebar = ({ t }) => {
         progress={progress}
       />
       <AddFile onClick={() => setOpen(true)} />
-      <SidebarTabs t={t} />
+      <SidebarTabs />
     </SidebarContainer>
   );
 };

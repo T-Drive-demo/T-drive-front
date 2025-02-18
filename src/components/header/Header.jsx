@@ -10,16 +10,16 @@ import ProfileSection from "components/header/ProfileSection";
 import LeftIconsSection from "components/header/LeftIconsSection";
 import LocalesSection from "components/header/LocalesSection";
 
-const Header = ({ changeLanguage, t }) => {
+const Header = () => {
   return (
     <HeaderContainer>
       <Wrapper>
         <LogoSection />
-        <SearchBar t={t} />
+        <SearchBar />
         <RightContainer>
           <LeftIconsSection />
           <ProfileSection />
-          <LocalesSection changeLanguage={changeLanguage} />
+          <LocalesSection />
         </RightContainer>
       </Wrapper>
     </HeaderContainer>

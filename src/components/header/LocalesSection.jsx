@@ -1,7 +1,14 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { RightSection } from "styles/header/profilesection.style";
 
-const LocalesSection = ({ changeLanguage }) => {
+const LocalesSection = ({}) => {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   return (
     <RightSection>
       <LocalesMenu>

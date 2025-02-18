@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { InputContainer, SearchContainer } from "styles/header/searchbar.style";
 import { SearchIcons } from "components/common/SvgIcons";
+import { useTranslation } from "react-i18next";
 
-const SearchBar = ({ t }) => {
+const SearchBar = () => {
   const [searchQuery, setQuery] = useState("");
+  const { t } = useTranslation();
 
   const handleSearchByInput = (e) => {
     if (e.key === "Enter" && searchQuery.length > 0) {

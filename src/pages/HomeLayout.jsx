@@ -3,21 +3,14 @@ import { Outlet } from "react-router-dom";
 
 import Header from "components/header/Header";
 import Sidebar from "components/sidebar/Sidebar";
-import { useTranslation } from "react-i18next";
 
 const HomeLayout = () => {
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
-
   return (
     <>
-      <Header changeLanguage={changeLanguage} t={t} />
+      <Header />
       <HomeContainer>
-        <Sidebar t={t} />
-        <Outlet t={t} />
+        <Sidebar />
+        <Outlet />
       </HomeContainer>
     </>
   );

@@ -15,11 +15,13 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getFiles } from "api/firebaseApi";
 import { changeBytes } from "components/common/common";
+import { useTranslation } from "react-i18next";
 
-const SidebarTabs = ({ t }) => {
+const SidebarTabs = () => {
   const [files, setFiles] = useState([]);
   const [storage, setStorage] = useState("");
   const [size, setSize] = useState("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     const unsubscribe = getFiles(setFiles);
