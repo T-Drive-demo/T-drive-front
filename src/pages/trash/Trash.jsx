@@ -3,9 +3,11 @@ import PageHeader from "components/common/PageHeader";
 import { Suspense, useEffect, useState } from "react";
 import FilesList from "components/common/FilesList";
 import { getTrashFiles } from "api/firebaseApi";
+import { useTranslation } from "react-i18next";
 
 const Trash = () => {
   const [files, setFiles] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const unsubscribe = getTrashFiles(setFiles);
@@ -15,16 +17,14 @@ const Trash = () => {
 
   return (
     <TrashContainer>
-      <PageHeader pageTitle={"Trash"} />
+      <PageHeader pageTitle={t(`sidebar.Trash`)} />
       <Suspense>
         <FilesList
           data={files}
           page="trash"
           imagePath={"./assets/img/trash.svg"}
-          text1={"Nothing in trash"}
-          text2={
-            "Move items you don't need to trash. Items in trash will be deleted forever after you delete them from here"
-          }
+          text1={t(`Trash.text1`)}
+          text2={t(`Trash.text2`)}
         />
       </Suspense>
     </TrashContainer>

@@ -9,5 +9,32 @@
     "Shared": "Shared with me",
     "Trash": "Trash",
     "Storage": "Storage"
+  },
+  "data": {
+    "Recent": "Recents",
+    "Name": "Name",
+    "File Size": "File Size",
+    "Last Modified": "Last Modified",
+    "Options": "Options"
+  },
+  "MyDrive": {
+    "text1": "A place for all of your files",
+    "text2": "Use the 'New' button to upload"
+  },
+  "Recent": {
+    "text1": "No recent files",
+    "text2": "See all the files you're recently edited or added"
+  },
+  "Starred": {
+    "text1": "No starred files",
+    "text2": "Add stars to things that you want to easily find later"
+  },
+  "Shared": {
+    "text1": "No shared files",
+    "text2": "Find and manage all the files shared with you in one place."
+  },
+  "Trash": {
+    "text1": "Nothing in trash",
+    "text2": "Move items you don't need to trash. Items in trash will be deleted forever after you delete them from here"
   }
 }

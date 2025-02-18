@@ -26,6 +26,7 @@ import {
 } from "react-share";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const MainData = ({
   files,
@@ -35,6 +36,7 @@ const MainData = ({
   setOptionsVisible,
 }) => {
   const [showShareIcons, setShowShareIcons] = useState(false);
+  const { t } = useTranslation();
 
   const handleShareClick = () => {
     setShowShareIcons(!showShareIcons);
@@ -46,17 +48,17 @@ const MainData = ({
         <DataListRow>
           <div>
             <b>
-              <ArrowDownwardIcons /> Name
+              <ArrowDownwardIcons /> {t(`data.Name`)}
             </b>
           </div>
           <div className="fileSize">
-            <b>File Size</b>
+            <b>{t(`data.File Size`)}</b>
           </div>
           <div className="modified">
-            <b>Last Modified</b>
+            <b>{t(`data.Last Modified`)}</b>
           </div>
           <div>
-            <b>Options</b>
+            <b>{t(`data.Options`)}</b>
           </div>
         </DataListRow>
       )}
@@ -158,8 +160,8 @@ const MainData = ({
       ) : (
         <LottieImage
           imagePath={"/assets/img/homePage.svg"}
-          text1={"A place for all of your files"}
-          text2={"Use the 'New' button to upload"}
+          text1={t(`MyDrive.text1`)}
+          text2={t(`MyDrive.text2`)}
         />
       )}
     </div>
