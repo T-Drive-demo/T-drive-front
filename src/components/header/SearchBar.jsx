@@ -2,7 +2,7 @@ import { useState } from "react";
 import { InputContainer, SearchContainer } from "styles/header/searchbar.style";
 import { SearchIcons } from "components/common/SvgIcons";
 
-const SearchBar = () => {
+const SearchBar = ({ t }) => {
   const [searchQuery, setQuery] = useState("");
 
   const handleSearchByInput = (e) => {
@@ -27,7 +27,7 @@ const SearchBar = () => {
           value={searchQuery}
           onChange={(e) => setQuery(e.target.value)}
           onKeyUp={handleSearchByInput}
-          placeholder="Search in Drive"
+          placeholder={t(`header.searchInput`)}
         />
         <span onClick={handleSearch}>
           <SearchIcons />

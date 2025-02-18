@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { getFiles } from "api/firebaseApi";
 import { changeBytes } from "components/common/common";
 
-const SidebarTabs = () => {
+const SidebarTabs = ({ t }) => {
   const [files, setFiles] = useState([]);
   const [storage, setStorage] = useState("");
   const [size, setSize] = useState("");
@@ -40,7 +40,7 @@ const SidebarTabs = () => {
         {({ isActive }) => (
           <SidebarOption className={isActive ? "tab-active" : ""}>
             <MobileScreenShareIcon />
-            <span>My Drive</span>
+            <span>{t(`sidebar.MyDrive`)}</span>
           </SidebarOption>
         )}
       </NavLink>
@@ -48,7 +48,7 @@ const SidebarTabs = () => {
         {({ isActive }) => (
           <SidebarOption className={isActive ? "tab-active" : ""}>
             <QueryBuilderIcon />
-            <span>Recent</span>
+            <span>{t(`sidebar.Recent`)}</span>
           </SidebarOption>
         )}
       </NavLink>
@@ -56,7 +56,7 @@ const SidebarTabs = () => {
         {({ isActive }) => (
           <SidebarOption className={isActive ? "tab-active" : ""}>
             <StarBorderIcon />
-            <span>Starred</span>
+            <span>{t(`sidebar.Starred`)}</span>
           </SidebarOption>
         )}
       </NavLink>
@@ -64,7 +64,7 @@ const SidebarTabs = () => {
         {({ isActive }) => (
           <SidebarOption className={isActive ? "tab-active" : ""}>
             <PeopleAltIcon />
-            <span>Shared with me</span>
+            <span>{t(`sidebar.Shared`)}</span>
           </SidebarOption>
         )}
       </NavLink>
@@ -72,14 +72,14 @@ const SidebarTabs = () => {
         {({ isActive }) => (
           <SidebarOption className={isActive ? "tab-active" : ""}>
             <DeleteOutlineIcon />
-            <span>Trash</span>
+            <span>{t(`sidebar.Trash`)}</span>
           </SidebarOption>
         )}
       </NavLink>
       <hr />
       <SidebarOption>
         <CloudQueueIcons />
-        <span>Storage</span>
+        <span>{t(`sidebar.Storage`)}</span>
       </SidebarOption>
       <StorageBar>
         <progress size="tiny" value={size} max={15000000000} />

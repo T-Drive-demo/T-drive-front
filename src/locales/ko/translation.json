@@ -1,0 +1,13 @@
+{
+  "header": {
+    "searchInput": "드라이브에서 찾아보세요"
+  },
+  "sidebar": {
+    "MyDrive": "내 드라이브",
+    "Recent": "최근 문서함",
+    "Starred": "중요 문서함",
+    "Shared": "공유 문서함",
+    "Trash": "휴지통",
+    "Storage": "스토리지"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "header": {
+    "searchInput": "Search In Drive"
+  },
+  "sidebar": {
+    "MyDrive": "My Drive",
+    "Recent": "Recent",
+    "Starred": "Starred",
+    "Shared": "Shared with me",
+    "Trash": "Trash",
+    "Storage": "Storage"
+  }
+}

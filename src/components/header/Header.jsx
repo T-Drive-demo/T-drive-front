@@ -8,16 +8,18 @@ import SearchBar from "components/header/SearchBar";
 import LogoSection from "components/header/LogoSection";
 import ProfileSection from "components/header/ProfileSection";
 import LeftIconsSection from "components/header/LeftIconsSection";
+import LocalesSection from "components/header/LocalesSection";
 
-const Header = () => {
+const Header = ({ changeLanguage, t }) => {
   return (
     <HeaderContainer>
       <Wrapper>
         <LogoSection />
-        <SearchBar />
+        <SearchBar t={t} />
         <RightContainer>
           <LeftIconsSection />
           <ProfileSection />
+          <LocalesSection changeLanguage={changeLanguage} />
         </RightContainer>
       </Wrapper>
     </HeaderContainer>
