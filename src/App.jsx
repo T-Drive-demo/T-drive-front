@@ -1,9 +1,5 @@
 import HomeLayout from "pages/HomeLayout";
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Data from "pages/home/Data";
 import Recent from "pages/recent/Recent";
 import Starred from "pages/starred/Starred";
@@ -13,6 +9,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "pages/Layout";
 import ErrorPage from "pages/ErrorPage";
+import { Provider } from "react-redux";
+import { store } from "store/Store";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,7 +47,7 @@ function App() {
     },
   ]);
   return (
-    <>
+    <Provider store={store}>
       <RouterProvider router={router} />
       <ToastContainer
         position="top-right"
@@ -63,7 +61,7 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-    </>
+    </Provider>
   );
 }
 

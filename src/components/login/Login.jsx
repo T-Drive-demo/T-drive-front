@@ -11,22 +11,17 @@ import {
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { SignIn } from "api/userApi";
-import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setUserLoginDetails } from "store/UserSlice";
 
 const Login = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const accessToken = localStorage.getItem("accessToken");
+  const dispatch = useDispatch();
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
-
-  useEffect(() => {
-    if (accessToken) {
-      navigate("/home");
-    }
-  }, [accessToken, navigate]);
 
   const signInUser = (event) => {
     // 페이지 리로딩 방지
@@ -36,12 +31,20 @@ const Login = () => {
     const pw = document.getElementById("inputPw").value;
 
     if (SignIn(email, pw)) {
-      localStorage.setItem(
-        "accessToken",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlck5hbWUiOiLslYThrZjrjIDqsJUiLCJ1c2VyRW1haWwiOiJ0ZXN0MTIzNEB0aGlua2ZyZWUuY29tIiwidXNlclB3IjoiMTIzNCIsImV4cCI6MTcwNzg5NjAwMH0.Fj4wC7BGPVXnBrRZQObcM7NdG9XaAq1xTO5fN9BaZhY"
-      );
+      const loginUser = SignIn(email, pw);
+      setUser(loginUser);
       navigate("/home");
     }
+  };
+
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.userName,
+        email: user.userEmail,
+        photo: user.photoURL,
+      })
+    );
   };
 
   return (
