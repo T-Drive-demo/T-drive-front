@@ -11,17 +11,26 @@ import {
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { SignIn } from "api/userApi";
-import { useDispatch } from "react-redux";
-import { setUserLoginDetails } from "store/UserSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserName, setUserLoginDetails } from "store/UserSlice";
+import { useEffect } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
+  const userName = useSelector(selectUserName);
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
+
+  useEffect(() => {
+    // 이미 로그인했다면 바로 home으로
+    if (userName) {
+      navigate("/home");
+    }
+  }, [userName]);
 
   const signInUser = (event) => {
     // 페이지 리로딩 방지
