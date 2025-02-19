@@ -1,6 +1,6 @@
 {
   "header": {
-    "searchInput": "Search In Drive"
+    "inputSearch": "Search In Drive"
   },
   "sidebar": {
     "MyDrive": "My Drive",
@@ -36,5 +36,12 @@
   "Trash": {
     "text1": "Nothing in trash",
     "text2": "Move items you don't need to trash. Items in trash will be deleted forever after you delete them from here"
+  },
+  "login": {
+    "title": "Sign in to Thinkfree Drive",
+    "inputEmail": "Email address",
+    "inputPw": "Password",
+    "forgotPw": "Forgot password?",
+    "loginButton": "Sign in"
   }
 }

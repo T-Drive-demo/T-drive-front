@@ -29,7 +29,7 @@ const SearchBar = () => {
           value={searchQuery}
           onChange={(e) => setQuery(e.target.value)}
           onKeyUp={handleSearchByInput}
-          placeholder={t(`header.searchInput`)}
+          placeholder={t(`header.inputSearch`)}
         />
         <span onClick={handleSearch}>
           <SearchIcons />

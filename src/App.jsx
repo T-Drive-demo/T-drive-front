@@ -11,17 +11,20 @@ import Shared from "pages/shared/Shared";
 import Trash from "pages/trash/Trash";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Layout from "pages/Layout";
+import ErrorPage from "pages/ErrorPage";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/",
       element: <HomeLayout />,
       children: [
-        {
-          index: true,
-          element: <Navigate replace to={"/home"} />,
-        },
         {
           path: "/home",
           element: <Data />,

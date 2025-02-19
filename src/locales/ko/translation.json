@@ -36,5 +36,12 @@
   "Trash": {
     "text1": "휴지통이 비워져 있습니다.",
     "text2": "필요하지 않은 항목은 휴지통으로 이동하세요. 이곳에서 삭제하면 파일이 영구적으로 삭제됩니다."
+  },
+  "login": {
+    "title": "Thinkfree Drive 로그인",
+    "inputEmail": "이메일",
+    "inputPw": "비밀번호",
+    "forgotPw": "비밀번호를 잊으셨나요?",
+    "loginButton": "로그인"
   }
 }
