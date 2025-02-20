@@ -17,7 +17,7 @@ const ProfileSection = ({ userName, userPhoto, handleAuth }) => {
           </DropDown>
         </SignOut>
       </ProfileMenu>
-      <span>{userName}님</span>
+      <span>{userName}</span>
     </RightSection>
   );
 };

@@ -8,7 +8,6 @@ import {
   deleteDoc,
   addDoc,
 } from "firebase/firestore";
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { toast } from "react-toastify";
 
 const getFiles = (setFiles) => {
