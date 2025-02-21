@@ -33,7 +33,11 @@ const FileUploadModal = ({
   const handleDragLeave = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setDragOver(false);
+
+    // 드래그가 완전히 벗어났는지 확인
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setDragOver(false);
+    }
   };
 
   // 드래그 중인 요소가 목표 지점에 위치할때
