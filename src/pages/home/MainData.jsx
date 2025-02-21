@@ -181,19 +181,7 @@ const MainData = ({
                     <ShareIcon />
                     {" Share"}
                     <span className={showShareIcons ? "show" : ""}>
-                      <FacebookShareButton
-                        url={file.data.fileURL}
-                        hashtag={file.data.filename}
-                      >
-                        <FacebookIcon size={30} round={true} />
-                      </FacebookShareButton>
-
-                      <LinkedinShareButton
-                        url={file.data.fileURL}
-                        title={`This is ${file.data.filename} file link`}
-                      >
-                        <LinkedinIcon size={30} round={true} />
-                      </LinkedinShareButton>
+                      {/** 추후 공유, 링크 복사 추가 예정 */}
                     </span>
                   </ShareButton>
                   <span
