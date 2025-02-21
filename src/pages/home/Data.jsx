@@ -14,7 +14,6 @@ const Data = () => {
   const [files, setFiles] = useState([]);
   const [optionsVisible, setOptionsVisible] = useState(null);
   const { t } = useTranslation();
-  const [uploadFiles, setUploadFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
@@ -30,16 +29,12 @@ const Data = () => {
 
   const onChangeFile = (file) => {
     if (file) {
-      setUploadFiles(file);
       setSelectedFile(file.name);
       handleUpload(file);
     }
   };
 
   const handleUpload = (file) => {
-    // e.preventDefault();
-    console.log("handleUpload 실행");
-    console.log("업로드 시도된 파일명 : " + file.name);
     setSelectedFile("");
 
     try {
