@@ -42,7 +42,11 @@ const FilesList = ({ data, page = null, imagePath, text1, text2 }) => {
                 </StarContainer>
               )}
               {page === "trash" && (
-                <DeleteContainer onClick={() => handleDeleteFromTrash(file.id)}>
+                <DeleteContainer
+                  onClick={() =>
+                    handleDeleteFromTrash(file.id, file.data.filename)
+                  }
+                >
                   <DeleteIcon />
                   {" Delete Permanently"}
                 </DeleteContainer>

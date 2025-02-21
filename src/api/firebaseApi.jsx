@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db, ref, storage } from "../firebase";
 import {
   collection,
   doc,
@@ -8,6 +8,7 @@ import {
   deleteDoc,
   addDoc,
 } from "firebase/firestore";
+import { deleteObject } from "firebase/storage";
 import { toast } from "react-toastify";
 
 const getFiles = (setFiles) => {
@@ -55,7 +56,7 @@ const handleStarred = async (id) => {
   }
 };
 
-const handleDeleteFromTrash = async (id) => {
+const handleDeleteFromTrash = async (id, fileName) => {
   try {
     const confirmed = window.confirm(
       "Are you sure you want to delete this file?"
@@ -65,6 +66,18 @@ const handleDeleteFromTrash = async (id) => {
       const docRef = doc(db, "trash", id);
 
       await deleteDoc(docRef);
+
+      // Storage에서도 파일 삭제
+      const storageRef = ref(storage, `files/${fileName}`);
+
+      await deleteObject(storageRef)
+        .then(() => {
+          console.log("File deleted from Storage");
+        })
+        .catch((error) => {
+          console.error("Error deleting file from Storage:", error);
+        });
+
       toast.error("Permanently Deleted");
     }
   } catch (error) {
