@@ -11,6 +11,7 @@ import Layout from "pages/Layout";
 import ErrorPage from "pages/ErrorPage";
 import { Provider } from "react-redux";
 import { store } from "store/Store";
+import SearchItems from "components/search/SearchItems";
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
         {
           path: "/trash",
           element: <Trash />,
+        },
+        {
+          path: "/search/:query",
+          element: <SearchItems />,
         },
       ],
     },

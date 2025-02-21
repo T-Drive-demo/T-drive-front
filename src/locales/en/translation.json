@@ -43,5 +43,9 @@
     "inputPw": "Password",
     "forgotPw": "Forgot password?",
     "loginButton": "Sign in"
+  },
+  "search": {
+    "text1": "No matching results",
+    "text2": "Adjust your query or try searching all of Drive"
   }
 }

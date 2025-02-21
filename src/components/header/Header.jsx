@@ -2,7 +2,9 @@ import {
   Wrapper,
   HeaderContainer,
   RightContainer,
+  SearchWrapper,
 } from "styles/header/header.style";
+import { SearchIcons } from "components/common/SvgIcons";
 import {
   selectUserName,
   selectUserPhoto,
@@ -14,7 +16,7 @@ import ProfileSection from "components/header/ProfileSection";
 import LeftIconsSection from "components/header/LeftIconsSection";
 import LocalesSection from "components/header/LocalesSection";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SignOut } from "api/userApi";
 
@@ -23,9 +25,6 @@ const Header = () => {
   const navigate = useNavigate();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
-
-  console.log("Header userName: " + userName);
-  console.log("Header userPhoto: " + userPhoto);
 
   useEffect(() => {
     if (!userName) {
