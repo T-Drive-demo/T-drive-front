@@ -27,7 +27,7 @@ const Data = () => {
       <PageHeader pageTitle={t(`sidebar.MyDrive`)} />
       {/** 저장소에 파일이 있다면 */}
       {files.length > 0 && <h4>{t(`data.Recent`)}</h4>}
-      <div>
+      <div htmlFor="fileUpload">
         <RecentDataGrid files={files} />
         <div>
           <MainData

@@ -67,11 +67,14 @@ const ModalBody = styled.div`
     padding: 20px;
     box-sizing: border-box; /* padding과 border가 전체 크기에 포함되도록 */
     color: #000;
-    border: 2px dashed #0066da;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease-in-out;
+    ${(props) =>
+      props.$dragOver
+        ? `border: 2px dashed #0066da; background-color: rgba(0, 102, 218, 0.2);`
+        : `border: 2px dashed gray;`}
 
     p {
       text-align: center;

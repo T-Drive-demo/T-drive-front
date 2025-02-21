@@ -17,10 +17,10 @@ const Sidebar = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [progress, setProgress] = useState(null);
 
-  const handleFile = (e) => {
-    if (e.target.files[0]) {
-      setFile(e.target.files[0]);
-      setSelectedFile(e.target.files[0].name);
+  const onChangeFile = (file) => {
+    if (file) {
+      setFile(file);
+      setSelectedFile(file.name);
     }
   };
 
@@ -79,10 +79,10 @@ const Sidebar = () => {
         open={open}
         setOpen={setOpen}
         uploading={uploading}
-        handleFile={handleFile}
         handleUpload={handleUpload}
         selectedFile={selectedFile}
         progress={progress}
+        onChangeFile={onChangeFile}
       />
       <AddFile onClick={() => setOpen(true)} />
       <SidebarTabs />
