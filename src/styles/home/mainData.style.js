@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+const MainDataContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 2px dashed ${(props) => (props.$dragOver ? "#0066da" : "none")};
+  background-color: ${(props) =>
+    props.$dragOver ? "rgba(0, 102, 218, 0.2)" : "transparent"};
+  transition: background-color 0.3s ease-in-out;
+`;
+
+// 동적인 스타일과 input에 대해 고정적인 스타일 동시 적용 오류로
+const InputNone = styled.div`
+  input {
+    display: none;
+  }
+`;
+
 const DataListRow = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr 1.5fr 1fr;
@@ -184,4 +200,11 @@ const ShareButton = styled.span`
   }
 `;
 
-export { DataListRow, OptionsContainer, OptionsMenu, ShareButton };
+export {
+  MainDataContainer,
+  InputNone,
+  DataListRow,
+  OptionsContainer,
+  OptionsMenu,
+  ShareButton,
+};
