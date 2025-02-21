@@ -2,9 +2,7 @@ import {
   Wrapper,
   HeaderContainer,
   RightContainer,
-  SearchWrapper,
 } from "styles/header/header.style";
-import { SearchIcons } from "components/common/SvgIcons";
 import {
   selectUserName,
   selectUserPhoto,
@@ -16,9 +14,9 @@ import ProfileSection from "components/header/ProfileSection";
 import LeftIconsSection from "components/header/LeftIconsSection";
 import LocalesSection from "components/header/LocalesSection";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SignOut } from "api/userApi";
+import { useEffect } from "react";
 
 const Header = () => {
   const dispatch = useDispatch();
